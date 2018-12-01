@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<div class="row" style="margin-top: 100px;"> 
+    <h1 class="col-sm-12" style="text-align: center;"> Thanks! You vote has been accepted.</h1>
+    <p class="col-sm-12" style="text-align: center;">You'll be automatically logged out in a few seconds.</p>
+</div>
+
+<audio id="beep">
+  <source src="beep.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script type="text/javascript">
+    window.setTimeout(function(){
+        document.getElementById("beep").play();
+    }, 3000);
+    window.setTimeout(function(){
+        window.location.href += "/logout";
+    }, 5000);
+</script>
+<% include partials/footer %>

@@ -1,0 +1,12 @@
+# How to setup the project?
+> Go to app.js, line 178
+> Remove isLoggedInAdmin
+> Run the project with command - node app.js
+> open /regiester
+> register new user with username 'root'.
+> Shut the server.
+> Undo line 178 - put isLoggedInAdmin where it was before.
+> Run server. You're done.
+
+- I'm assuming that you've your mongod running.
+- If you face some issues. Try running this in firefox.

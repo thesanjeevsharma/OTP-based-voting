@@ -1,0 +1,21 @@
+<% include partials/header %>
+    
+<div class="container">
+<div class="form-div">
+     <h3>Admin Login</h3>
+<form method="POST" action="/loginAdmin">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username" aria-describedby="usernameHelp">
+        <small id="usernameHelp" class="form-text text-muted">We'll never share your data with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+<a href="/login">Go to Voter Login</a>
+</div>
+</div>
+<% include partials/footer %>

@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.hero{
+    background: url('https://ichef.bbci.co.uk/news/660/cpsprodpb/650B/production/_95576852_038249207-1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    height: 100vh;
+    padding: 100px;
+    text-align: center;
+}
+
+.form-div{
+    box-shadow: 0px 0px 10px 1px #bbb;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 100px auto;
+}
+
+.navbar-text{
+    color: #4CAF50;
+}

@@ -1,0 +1,68 @@
+<% include partials/header %>
+<div class="container">
+
+<div class="row">
+    <h3>Add New User</h3>
+</div>
+<form method="POST" action="/register" class="form-inline">
+    <div class="form-group col-sm-12 col-md-3">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username" minlength="4" maxlength="15" required>
+    </div>
+    <div class="form-group col-sm-12 col-md-3">
+        <label for="password">Password</label>
+        <input type="text" class="form-control" id="password" name="password" placeholder="Password" minlength="4" maxlength="15" required>
+    </div>
+    <div class="form-group col-sm-12 col-md-3">
+        <label for="phone">Phone</label>
+        <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone Number" minlength="10" maxlength="10" required>
+    </div>
+    <button type="submit" class="btn btn-primary col-sm-12 col-md-3 btn-block">Add</button>
+</form>
+<div class="row" style="margin: 10px 0;">
+    <h3>Vote Count</h3>
+</div>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Elie</th>
+      <th scope="col">Sia</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= artists[0].votes %></td>
+      <td><%= artists[1].votes %></td>
+    </tbody>
+</table>
+
+<div class="row">
+    <h3>Users</h3>
+</div>
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Remove</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(function(user){ %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.phone %></td>
+      <% if (user.username == "root") {%>
+        <td><a href="/removeUser/<%= user._id %>" class="btn btn-small btn-danger disabled">Remove</a></td>
+      <% } else { %>
+        <td><a href="/removeUser/<%= user._id %>" class="btn btn-small btn-danger">Remove</a></td>
+      <% } %>
+    </tr>
+    <% }) %>
+    </tbody>
+</table>
+
+</div>
+
+
+<% include partials/footer %>

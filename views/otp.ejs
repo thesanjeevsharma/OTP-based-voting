@@ -1,0 +1,22 @@
+<% include partials/header %>
+<div class="container">
+<div class="form-div">
+    <h3>Verify OTP</h3>
+    <P>OTP sent on +91-<%= phone %></P>
+<form action="/otp" method="POST">
+     <div class="form-group">
+        <label for="otp">Password</label>
+        <input type="text" class="form-control" id="otp" name="otp" placeholder="Enter OTP" maxlength="4" minlength="4" required>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+</form>
+</div>
+</div>
+
+<script type="text/javascript">
+    window.setTimeout(function(){
+        window.location.href += "/logout";
+    }, 45000);
+</script>
+
+<% include partials/footer %>

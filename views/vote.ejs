@@ -1,0 +1,51 @@
+<% include partials/header %>
+
+<div class="container">
+
+<div class="row" style="margin: 20px 0;">
+    <h2 class="mx-auto">Vote</h2>
+</div>
+
+<div class="row">
+    <div class="col-sm-6 d-flex justify-content-center">
+        <img src="<%= artists[0].image %>" class="rounded" width="250">
+    </div>
+    <div class="col-sm-6 d-flex justify-content-center">
+        <img src="<%= artists[1].image %>" class="rounded" width="250">
+    </div>
+</div>
+<div class="form-div">
+    <form method="post" action="/vote" onsubmit="return validateForm()">
+    <div class="form-group">
+        <input type="text" class="form-control" id="vote" name="vote" maxlength="3" minlength="3" required placeholder="ELE or SIA" aria-describedby="voteHelp">
+        <small id="voteHelp" class="form-text text-muted">Type as shown. Case-sensitive!</small>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Vote</button>
+    </form>
+</div>
+</div>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded',function() {
+        document.getElementById('vote').onchange = changeEventHandler;
+    },false);
+
+function changeEventHandler(event) {
+    document.getElementById('vote').value = event.value.toUpperCase();
+    if(event.value == 'ELE' || event.value == 'SIA'){
+      document.getElementById("vote").classList.add = 'is-valid';
+      document.getElementById("vote").classList.remove = 'is-invalid';
+    }
+    else {
+        document.getElementById("vote").classList.remove = 'is-valid';
+        document.getElementById("vote").classList.add = 'is-invalid';
+    } 
+}
+
+function validateForm(){
+    var voted = document.getElementById('vote').value;
+    if ( voted == 'SIA' || voted == "ELE") return true;
+    else return false;
+}
+</script>
+<% include partials/footer %>
